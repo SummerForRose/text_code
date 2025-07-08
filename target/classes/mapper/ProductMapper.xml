@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xmh.mapper.ProductMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xmh.model.Product">
+       <id column="product_number" property="product_number" />
+        <result column="sku" property="sku" />
+        <result column="link_alive" property="link_alive" />
+        <result column="shelf_time" property="shelf_time" />
+        <result column="review_progress" property="review_progress" />
+        <result column="data_update_time" property="data_update_time" />
+        <result column="listing_platform" property="listing_platform" />
+        <result column="img_url" property="img_url" />
+        <result column="product_title" property="product_title" />
+        <result column="product_url" property="product_url" />
+        <result column="min_price" property="min_price" />
+        <result column="max_price" property="max_price" />
+        <result column="product_goods_id" property="product_goods_id" />
+        <result column="estimated_supply_price" property="estimated_supply_price" />
+        <result column="purchase_price" property="purchase_price" />
+        <result column="product_profit" property="product_profit" />
+        <result column="product_profit_margin" property="product_profit_margin" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        sku , link_alive , shelf_time , review_progress , data_update_time , listing_platform , img_url , product_title , product_url , min_price , max_price , product_goods_id , estimated_supply_price , purchase_price , product_profit , product_profit_margin
+    </sql>
+
+</mapper>

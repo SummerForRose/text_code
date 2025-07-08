@@ -1,0 +1,88 @@
+-------------------------------------------------------------------------------
+Test set: com.xmh.service.IStudentServiceTest
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 0, Errors: 6, Skipped: 0, Time elapsed: 6.157 s <<< FAILURE! - in com.xmh.service.IStudentServiceTest
+delete  Time elapsed: 1.028 s  <<< ERROR!
+org.springframework.jdbc.BadSqlGrammarException: 
+
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Table 'afs_data.t_student' doesn't exist
+### The error may exist in com/xmh/mapper/StudentMapper.java (best guess)
+### The error may involve com.xmh.mapper.StudentMapper.deleteBatchIds-Inline
+### The error occurred while setting parameters
+### SQL: UPDATE t_student SET deleted=1 WHERE sid IN (   ?  ,  ?  ,  ?  )  AND deleted=0
+### Cause: java.sql.SQLSyntaxErrorException: Table 'afs_data.t_student' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'afs_data.t_student' doesn't exist
+	at com.xmh.service.IStudentServiceTest.delete(IStudentServiceTest.java:47)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'afs_data.t_student' doesn't exist
+	at com.xmh.service.IStudentServiceTest.delete(IStudentServiceTest.java:47)
+
+insert  Time elapsed: 0.052 s  <<< ERROR!
+org.springframework.jdbc.BadSqlGrammarException: 
+
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Table 'afs_data.t_student' doesn't exist
+### The error may exist in com/xmh/mapper/StudentMapper.java (best guess)
+### The error may involve com.xmh.mapper.StudentMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO t_student  ( sid, sname, sex, age, cid, great_time )  VALUES  ( ?, ?, ?, ?, ?, ? )
+### Cause: java.sql.SQLSyntaxErrorException: Table 'afs_data.t_student' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'afs_data.t_student' doesn't exist
+	at com.xmh.service.IStudentServiceTest.insert(IStudentServiceTest.java:33)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'afs_data.t_student' doesn't exist
+	at com.xmh.service.IStudentServiceTest.insert(IStudentServiceTest.java:33)
+
+findOne  Time elapsed: 0.026 s  <<< ERROR!
+org.springframework.jdbc.BadSqlGrammarException: 
+
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'afs_data.t_student' doesn't exist
+### The error may exist in com/xmh/mapper/StudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT sid,sname,sex,age,cid,great_time,update_time,deleted FROM t_student WHERE sid=?  AND deleted=0
+### Cause: java.sql.SQLSyntaxErrorException: Table 'afs_data.t_student' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'afs_data.t_student' doesn't exist
+	at com.xmh.service.IStudentServiceTest.findOne(IStudentServiceTest.java:61)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'afs_data.t_student' doesn't exist
+	at com.xmh.service.IStudentServiceTest.findOne(IStudentServiceTest.java:61)
+
+deleteOne  Time elapsed: 0.038 s  <<< ERROR!
+org.springframework.jdbc.BadSqlGrammarException: 
+
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Table 'afs_data.t_student' doesn't exist
+### The error may exist in com/xmh/mapper/StudentMapper.java (best guess)
+### The error may involve com.xmh.mapper.StudentMapper.deleteById-Inline
+### The error occurred while setting parameters
+### SQL: UPDATE t_student SET deleted=1 WHERE sid=?  AND deleted=0
+### Cause: java.sql.SQLSyntaxErrorException: Table 'afs_data.t_student' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'afs_data.t_student' doesn't exist
+	at com.xmh.service.IStudentServiceTest.deleteOne(IStudentServiceTest.java:40)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'afs_data.t_student' doesn't exist
+	at com.xmh.service.IStudentServiceTest.deleteOne(IStudentServiceTest.java:40)
+
+updateS  Time elapsed: 0.044 s  <<< ERROR!
+org.springframework.jdbc.BadSqlGrammarException: 
+
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Table 'afs_data.t_student' doesn't exist
+### The error may exist in com/xmh/mapper/StudentMapper.java (best guess)
+### The error may involve com.xmh.mapper.StudentMapper.updateById-Inline
+### The error occurred while setting parameters
+### SQL: UPDATE t_student  SET sname=?,    great_time=?, update_time=?  WHERE sid=?  AND deleted=0
+### Cause: java.sql.SQLSyntaxErrorException: Table 'afs_data.t_student' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'afs_data.t_student' doesn't exist
+	at com.xmh.service.IStudentServiceTest.updateS(IStudentServiceTest.java:55)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'afs_data.t_student' doesn't exist
+	at com.xmh.service.IStudentServiceTest.updateS(IStudentServiceTest.java:55)
+
+FindAll  Time elapsed: 0.036 s  <<< ERROR!
+org.springframework.jdbc.BadSqlGrammarException: 
+
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'afs_data.t_student' doesn't exist
+### The error may exist in com/xmh/mapper/StudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  sid,sname,sex,age,cid,great_time,update_time,deleted  FROM t_student   WHERE  deleted=0
+### Cause: java.sql.SQLSyntaxErrorException: Table 'afs_data.t_student' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'afs_data.t_student' doesn't exist
+	at com.xmh.service.IStudentServiceTest.FindAll(IStudentServiceTest.java:68)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'afs_data.t_student' doesn't exist
+	at com.xmh.service.IStudentServiceTest.FindAll(IStudentServiceTest.java:68)
+

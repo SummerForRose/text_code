@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xmh.mapper.ProductDetailsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xmh.model.ProductDetails">
+        <id column="product_id" property="product_id" />
+        <result column="product_title" property="product_title" />
+        <result column="img_url" property="img_url" />
+        <result column="product_url" property="product_url" />
+        <result column="min_price" property="min_price" />
+        <result column="max_price" property="max_price" />
+        <result column="stock" property="stock" />
+        <result column="total_sales" property="total_sales" />
+        <result column="daily_sales" property="daily_sales" />
+        <result column="weekly_sales" property="weekly_sales" />
+        <result column="monthly_sales" property="monthly_sales" />
+        <result column="total_salesamount" property="total_salesamount" />
+        <result column="daily_exposure" property="daily_exposure" />
+        <result column="weekly_exposure" property="weekly_exposure" />
+        <result column="monthly_exposure" property="monthly_exposure" />
+        <result column="shop_link" property="shop_link" />
+        <result column="first_time_jjy" property="first_time_jjy" />
+        <result column="update_time_jjy" property="update_time_jjy" />
+        <result column="product_goods_id" property="product_goods_id" />
+        <result column="product_definition_type" property="product_definition_type" />
+        <result column="cat_one" property="cat_one" />
+        <result column="cat_two" property="cat_two" />
+        <result column="cat_three" property="cat_three" />
+        <result column="cat_four" property="cat_four" />
+        <result column="cat_five" property="cat_five" />
+        <result column="data_update" property="data_update" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        product_title , img_url , product_url , min_price , max_price , stock , total_sales , daily_sales , weekly_sales , monthly_sales , total_salesamount , daily_exposure , weekly_exposure , monthly_exposure , shop_link , first_time_jjy , update_time_jjy , product_goods_id , product_definition_type , cat_one , cat_two , cat_three , cat_four , cat_five , data_update
+    </sql>
+
+    <select id="listProductDetailsWithUsername" resultType="com.xmh.model.ProductDetails">
+        SELECT
+        pd.*,
+        tl.username
+        FROM
+        temu_product_library pd
+        LEFT JOIN
+        t_login tl ON pd.user_id = tl.user_id
+        <where>
+            ${ew.customSqlSegment}
+        </where>
+        ORDER BY
+        pd.soldtotal_growth DESC
+    </select>
+
+</mapper>
